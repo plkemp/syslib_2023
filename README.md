@@ -1,4 +1,3 @@
-@@ -1,6 +1,2 @@
 # syslib_2023
 # Notes on system librarianship 
 # Notes on Using GitHub with Linux
