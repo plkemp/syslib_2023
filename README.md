@@ -35,12 +35,30 @@
 
 - to use a database type "use databasename;"
 
-- to create a table type a command like this 
+- to create a table type a command like this
+ 
 "create table tablename
+
 (id int unsigned not null auto_increment, 
+
 variablename varchar(150) not null,
+
 variablename varchar(150) not null, 
+
 variable date not null,
+
 primary key (id)
+
 );"
+
+- to add records to a table type a command similar to this 
+
+"insert into table name (variablename1, variablename2, variablename3) values
+
+('variable1', 'varialble2', 'varialble3');
+
+- to display table information type a command like this
+
+"select * from tablename;
+ 
 
