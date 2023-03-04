@@ -1,4 +1,4 @@
-# Notes on System Llibrarianship
+# Notes on System Librarianship
  
 ##  Notes on Using GitHub with Linux
 
