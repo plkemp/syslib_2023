@@ -1,4 +1,3 @@
-# syslib_2023
 <<<<<<< HEAD
  Notes on system librarianship 
  Notes on Using GitHub with Linux
@@ -6,20 +5,10 @@
  use the "cd -" command to go back on directory level 
  use the "rm -r" command to delete non-empty directories when you make a mistake
  
-# Use these commands to update your notes on GitHub
+ Use these commands to update your notes on GitHub
+ notes added 03-04-23
+
  git add README.md 
  git commit -m "updated README.md"
  git push origin main 
  
-=======
-
-Notes on system librarianship 
-
-Notes on Using GitHub with Linux
-
-Use the 'git clone' command to mirror your Git Hub 
-
-use the 'cd -' command to go back on directory level 
-
-use the 'rm -r' command to delete non-empty directories when you make a mistake
->>>>>>> fd6610c2fb2ec982a9a157ede5c3c6bd15ac2fa1
