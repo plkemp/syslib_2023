@@ -1,4 +1,5 @@
 # syslib_2023
+<<<<<<< HEAD
  Notes on system librarianship 
  Notes on Using GitHub with Linux
  Use the "git clone" command to mirror your Git Hub
@@ -10,3 +11,15 @@
  git commit -m "updated README.md"
  git push origin main 
  
+=======
+
+Notes on system librarianship 
+
+Notes on Using GitHub with Linux
+
+Use the 'git clone' command to mirror your Git Hub 
+
+use the 'cd -' command to go back on directory level 
+
+use the 'rm -r' command to delete non-empty directories when you make a mistake
+>>>>>>> fd6610c2fb2ec982a9a157ede5c3c6bd15ac2fa1
