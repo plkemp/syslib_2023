@@ -21,3 +21,26 @@
 
  - git push origin main 
  
+## A few basic mySQL commands
+
+- to log on type the command "mysql -u yourusername -p
+
+- to create a database type "create database databasename;"
+
+- to set database privileges type "grant all privileges on databasename to 'yourusername'@'localhost';"
+
+- to see a list of databases type "show databases;"
+
+- to exit mysql and return to the Linux prompt type "\q"
+
+- to use a database type "use databasename;"
+
+- to create a table type a command like this 
+"create table tablename
+(id int unsigned not null auto_increment, 
+variablename varchar(150) not null,
+variablename varchar(150) not null, 
+variable date not null,
+primary key (id)
+);"
+
