@@ -19,7 +19,7 @@ There's an option for creating a free or relatively inexpensive VM on Google Clo
 
 To learn more visit the following links:
 
--[An Overview of the Google Cloud Platform](https://cloud.google.com/docs/overview}
+-[An Overview of the Google Cloud Platform]( https://cloud.google.com/docs/overview}
 
 -[Installing the Google Cloud CLI]( https://cloud.google.com/sdk/docs/install-sdk)
 
