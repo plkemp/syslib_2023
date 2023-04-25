@@ -18,15 +18,16 @@ They were entered using the Nano text editor.
 
 It you decide to take this course or try this project on your own, I highly recommend 
 
-- updating you GitHub journal regularly and, 
+- updating your GitHub journal regularly and, 
 
-- keeping a journal on your desktop 
+- keeping a journal on your desktop just in case you have to rebuild your server. One of my favorite applications
+ for coding and saving notes is Notepad++   I like Notepad++ for working with code because your lines are number 
+and your can open multiple text files simultaneously.
 
-just in case you have to rebuild your server. One of my favorite applications for coding and saving notes is 
-Notepad++
+- bookmarking the documentation sites for Google Cloud, Apache, Ubuntu and mySQL.
 
 
-## Confiuring a VM 
+## Configuring a VM 
 
 There's an option for creating a free or relatively inexpensive VM on Google Cloud.
 
@@ -36,7 +37,12 @@ To learn more visit the following links:
 
 [Installing the Google Cloud CLI]( https://cloud.google.com/sdk/docs/install-sdk)
 
-For this course we created VMs running Ubuntu 20.4
+For this course we created VMs running Ubuntu 20.4.  
+
+Our preferred method for connectng to the VM was SSH via the Google Cloud SDK shell. The command is formatted like this:
+
+gcloud compute ssh --zone "zone-info" "name-info" --project "project-id"
+   
 
 ## To keep the Ubuntu OS updated use these commands ---
 
@@ -68,31 +74,23 @@ sudo apt clean
     sudo init 0.
 
 
+## Frequently used Linux commands
 
-##  Notes on Using GitHub with Linux
 
- Use the "git clone" command to mirror your Git Hub
+apt show "package name"
 
- Use the "cd -" command to go back on directory level
+sudo su (to get to the root directory as an admin)
 
- Use the "rm -r" command to delete non-empty directories when you make a mistake
+cd to change directories
+
+"cd .." command to go back on directory level
+
+Use mkdir to make directories 
+
+"rm -r" command to delete non-empty directories. During this process you will add, move, and copy several directories.  
+Deleting directories created by mistake will save disk space. 
  
 ----------------------------
-
-[ Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
- 
- Use these commands to update your notes on GitHub
- notes added 03-04-23
-
- - git add README.md
- 
- - git commit -m "updated README.md"
-
- - git push origin main 
-
-
-
-
 
  
 ## A few basic mySQL commands
@@ -136,3 +134,6 @@ primary key (id)
 "select * from tablename;
  
 
+---
+
+Go to README2.md for more 
