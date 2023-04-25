@@ -1,4 +1,4 @@
-# Using GitHub for your project Journal and Installing Apache web server 
+# Using GitHub for your project journal and Installing Apache web server 
 
 Since you are reading this on GitHub you have probably already created a GitHub account.
 If you haven't you can instructions for creating your account at this link
