@@ -1,6 +1,7 @@
 # Notes on System Librarianship
 
-These are notes from a course on Systems Librianship conducted by Prof. Sean Burns. They were entered using the Nano text editor.
+This is my journal from a course on Systems Librianship conducted by University of Kentucky Professor Sean Burns. 
+They were entered using the Nano text editor.
 
 >This journal covers:
 
@@ -10,7 +11,19 @@ These are notes from a course on Systems Librianship conducted by Prof. Sean Bur
 
 - creating a bare bones OPAC and catalogue
 
-- installing Wordpress, Omeka and Koha 
+- installing Wordpress, Omeka and Koha
+
+- and finally creating a demo library system architecture  
+
+
+It you decide to take this course or try this project on your own, I highly recommend 
+
+- updating you GitHub journal regularly and, 
+
+- keeping a journal on your desktop 
+
+just in case you have to rebuild your server. One of my favorite applications for coding and saving notes is 
+Notepad++
 
 
 ## Confiuring a VM 
@@ -22,6 +35,8 @@ To learn more visit the following links:
 [An Overview of the Google Cloud Platform](https://cloud.google.com/docs/overview}
 
 [Installing the Google Cloud CLI]( https://cloud.google.com/sdk/docs/install-sdk)
+
+For this course we created VMs running Ubuntu 20.4
 
 ## To keep the Ubuntu OS updated use these commands ---
 
