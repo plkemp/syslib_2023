@@ -75,9 +75,9 @@ Before installing Apache check for updates to Ubuntu to make sure that you are r
 
 Use the commands:
 
-sudo apt update
+	sudo apt update
 
-sudo apt -y upgrade
+	sudo apt -y upgrade
 
 
 For this class we installed the Apache2 package.  The package that You're interested in happens to be named apache2 on Ubuntu. This package name is not 
@@ -86,12 +86,12 @@ a given. On other distributions, like Fedora, the Apache package is called httpd
 
 show command:
 	
-apt show apache2
+	apt show apache2
 
 
 Once you've confirmed that apache2 is the package that you want, install it with the apt install command. 
 
-sudo apt install apache2
+	sudo apt install apache2
 
 Press Y to agree to continue after running the command below:
 
@@ -101,14 +101,14 @@ Use systemctl to acquire some info about apache2 and make sure it is enabled and
 
 The command  
 
-systemctl list-unit-files apache2.service
+	systemctl list-unit-files apache2.service
 
 should show that apache2 is enabled and will start running automatically when the computer gets rebooted.
 
 
 Check the status using this command: 
 
-systemctl status apache2
+	systemctl status apache2
 
 The output of this command shows that apache2 is active, which means that it has started working.
 
