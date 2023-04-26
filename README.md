@@ -46,13 +46,13 @@ gcloud compute ssh --zone "zone-info" "name-info" --project "project-id"
 
 ## To keep the Ubuntu OS updated use these commands ---
 
-sudo apt update
+	sudo apt update
 
-sudo apt -y upgrade
+	sudo apt -y upgrade
 
-sudo apt autoremove
+	sudo apt autoremove
 
-sudo apt clean 
+	sudo apt clean  
 
 
 ** To reboot a VM after an OS update, use any one of the following commands:**
