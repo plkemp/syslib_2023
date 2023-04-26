@@ -17,21 +17,21 @@ The main use of PHP is to interact with databases, like MySQL, MariaDB, PostgreS
 
 > What Can PHP Do?
 
-> - PHP can generate dynamic page content
+ - PHP can generate dynamic page content
 
-> - PHP can create, open, read, write, delete, and close files on the server
+ - PHP can create, open, read, write, delete, and close files on the server
 
-> - PHP can collect form data
+ - PHP can collect form data
 
-> - PHP can send and receive cookies
+ - PHP can send and receive cookies
 
-> - PHP can add, delete, modify data in your database
+ - PHP can add, delete, modify data in your database
 
-> - PHP can be used to control user-access
+ - PHP can be used to control user-access
 
-> - PHP can encrypt data
+ - PHP can encrypt data
 
-> - With PHP you are not limited to output HTML. You can output images or PDF files. You can also output any text, such as XHTML and XML (PHP Introduction, n.d.)
+ - With PHP you are not limited to output HTML. You can output images or PDF files. You can also output any text, such as XHTML and XML (PHP Introduction, n.d.)
 
 
 ## To install PHP on your LAMP server 
@@ -42,6 +42,8 @@ The main use of PHP is to interact with databases, like MySQL, MariaDB, PostgreS
 	
     - Configure PHP and relevant modules to work with MySQL
 	
+----
+
 Use the following commands: 
 
 sudo apt install php libapache2-mod-php
@@ -70,18 +72,21 @@ Now visit that file using the external IP address for your server. For example, 
 
 http:// your server IP address /info.php
 
- 
 
+-------
 
-By default, when Apache2 serves a web page, it looks for and serves a file titled index.html, even if it does not display that file in the URL bar. 
+By default, when Apache2 serves a web page, it looks for and serves a file titled index.html, even if it does 
 
+not display that file in the URL bar. However, in order to serve PHP pages, we want Apache2 to default to a file 
 
+titled index.php instead of index.html file. 
 
-However, in order to serve PHP pages, we want Apache2 to default to a file titled index.php instead of index.html file. 
 
 To configure that, we need to edit the dir.conf file in the /etc/apache2/mods-enabled/ directory. 
 
 In that file there is a line that starts with DirectoryIndex. 
+
+------
 
 The first file in that line is index.html, and then there are a series of other files that Apache2 will look for in the order listed. 
 
@@ -119,6 +124,8 @@ If you get a Syntax Ok message, we can reload the Apache2 configuration and rest
 - sudo systemctl restart apache2
 
 ---------
+
+### Create a PHP page 
 
 Now create a basic PHP page. cd back to the Apache2 document root directory and use nano to create and open an index.php file:
 
@@ -233,6 +240,11 @@ next in the dir.conf DirectoryIndex line.
 
 
 
+
+
+
+
+----
 
 PHP Introduction. (n.d.). Retrieved April 25, 2023, from https://www.w3schools.com/php/php_intro.asp
 
