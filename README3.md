@@ -451,6 +451,52 @@ update yourTableName set yourColumnName=replace(yourColumnName,yourOldValue,your
 update books set format=replace(format,'hardback','hardcover');
 
 
+## Install PHP and MySQL Support 
+
+To complete the connection between PHP and MySQL you need to install PHP support for MySQL. 
+
+We installed the followng modules alongside the basic supportto demonstrate some basics.
+
+Type the command 
+
+sudo apt install php-mysql php-mysqli
+
+And then restart Apache2 and MySQL:
+
+sudo systemctl restart apache2
+sudo systemctl restart mysql
+
+---
+
+In order for PHP to connect to MySQL, it needs to authenticate itself. To do that, you can create a login.php file in /var/www/html. 
+
+You need to change the group ownership of the file and its permissions so that the file can be read by the Apache2 web server
+
+ but not by the world, since this file will store password information.
+ 
+Here's an example 
+
+cd /var/www/html/
+sudo touch login.php
+sudo chmod 640 login.php
+sudo chown :www-data login.php
+ls -l login.php
+sudo nano login.php
+
+---
+			
+			
+In the file, add your credentials. You need to use your own password where I have the Xs:
+
+		<?php // login.php
+		$db_hostname = "localhost";
+		$db_database = "databasename";
+		$db_username = "username";
+		$db_password = "XXXXXXXXX";
+		?>
+
+
+
 See README4 for information on installing WordPress and Omeka 
 
 
