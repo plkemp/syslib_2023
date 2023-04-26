@@ -158,3 +158,4 @@ If your web page is not loading, make sure your URL is http://IP-ADDRESS and not
 
 
 
+In README3 I will discuss installing PHP and mySQL
