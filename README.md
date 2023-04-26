@@ -93,7 +93,7 @@ Deleting directories created by mistake will save disk space.
 ----------------------------
 
  
-## A few basic mySQL commands
+## A few basic MySQL commands
 
 - to log on type the command "mysql -u yourusername -p
 
