@@ -86,8 +86,6 @@ To configure that, we need to edit the dir.conf file in the /etc/apache2/mods-en
 
 In that file there is a line that starts with DirectoryIndex. 
 
-------
-
 The first file in that line is index.html, and then there are a series of other files that Apache2 will look for in the order listed. 
 
 If any of those files exist in the document root, then Apache2 will serve those before proceeding to the next. \
@@ -238,8 +236,109 @@ However, if for some reason the index.php was deleted, then Apache2 would revert
 
 next in the dir.conf DirectoryIndex line.
 
+-------------
+
+## Setting Up and Configuring mySQL on a VM 
+
+MySQL is an open-source relational database management system developed, distributed, and supported by Oracle Corporation.
+
+The MySQL website (http://www.mysql.com/) provides the latest information about MySQL software.
+
+> MySQL is used with other programs to implement applications that need relational database capability ( e.g.Drupal, Joomla, phpBB, and WordPress) 
+
+and websites (e.g. Facebook, Flickr, MediaWiki, Twitter, and YouTube.)
 
 
+For this course, we created databases for to store and serve data for a bare bones OPAC demo, Wordpress and Koha.  
+
+### Install MySQL 
+
+To install MySQL use the command 
+
+sudo apt install mysql-server
+
+
+
+Make sure that the database server is running by using the command 
+
+systemctl status mysql 
+
+
+Login as the root Linux user to test the database 
+
+ - sudo su
+
+
+Connect to the MySQL server as the MySQL root user 
+
+ - mysql -u root
+
+
+You can type \h for help or \c to clear the current input statement 
+
+
+
+You can display a list of the databasess using the show command. If you haven't created any, the response msy be 0. 
+
+However, you may see databases that were created during the installation of other programs. 
+
+Type
+
+show databases;
+
+----
+
+**IMPORTANT**  - Don't forget to end MySQL command strings with a semicolon.  
+
+> When you type a command in mySQL without the ending semicolon MySQL won't run the command. Instead of giving an error it gives an endless list of:  
+
+>	'>
+	
+>	'>
+	
+>	'>
+	
+>	'>
+
+If this happens, break the loop by typing '\c  OR \c         
+
+----
+
+Reserve the root MySQL user for special use cases and instead create a MySQL user, or more than one MySQL user, as needed.
+ 
+Create a regular MySQL user using the create command. 
+
+From the MySQL prompt type
+
+		create user 'username'@'localhost' identified by 'password';      (
+
+
+If the prompt returns a Query OK message, then the new user should have been created without any issues. 
+
+Now create a database
+
+		create database databasename;
+		
+USe the show command to confirm that the database was created		
+		
+		show databases;
+		
+Give the user rights to access the database
+
+		grant all privileges on databasename.* to 'username'@'localhost';
+
+
+** IMPORTANT ** 
+
+ - The regular user will be granted all privileges on the new database, including all its tables. Other than granting all privileges
+ 
+ _ we could limit the user to specific privileges, including: CREATE, DROP, DELETE, INSERT, SELECT, UPDATE, and GRANT OPTION.
+ 
+ _ Such privileges may be called operations or functions, and they allow MySQL users to use and modify the databases, where appropriate.
+ 
+ _  For example, we may want to limit the opacuser user to only be able to use SELECT commands. It totally depends on the purpose of the 
+ 
+ database and our security risks. --- 
 
 
 
