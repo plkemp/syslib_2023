@@ -336,11 +336,122 @@ Give the user rights to access the database
  
  _ Such privileges may be called operations or functions, and they allow MySQL users to use and modify the databases, where appropriate.
  
- _  For example, we may want to limit the opacuser user to only be able to use SELECT commands. It totally depends on the purpose of the 
+ _  For example, we may want to limit the user to only be able to use SELECT commands. It totally depends on the purpose of the 
  
  database and our security risks. --- 
 
 
+### Sample MySQL Commands
+
+To display the databases in your directory type 
+
+show databases;
+
+---
+
+To begin working in a database type 
+
+use "databasename";  ( do not enter the quotemarks )
+
+---
+
+To create tables use the create command
+
+> create table books
+-> (
+-> id int unsigned not null auto_increment,
+-> author varchar(150) not null,
+-> title varchar(150) not null,
+-> copyright date not null,
+-> primary key (id)
+-> );
+
+---
+
+To display tables type
+ 
+show tables;
+
+---
+
+To display info about your table type 
+
+describe "databasename";   ( do not enter the quotemarks )
+
+---
+
+To insert records into a table structure your command like this 
+
+> insert into books
+-> (author, title, publisher, copyright) values
+-> ('Emma Donoghue', 'Room', 'Little, Brown \& Company', '2010-08-06'),
+-> ('Zadie Smith', 'White Teeth', 'Hamish Hamilton', '2000-01-27');
+
+---
+
+To add a variable to a table structure your command like this 
+
+
+> alter table books
+-> add publisher varchar(75) after title;
+
+---
+
+To enter info into a table field structure your command like this 
+
+> update books set publisher='Simon \& Schuster' where id='1';
+> update books set publisher='Penguin Random House' where id='2';
+> update books set publisher='W. W. Norton \& Company' where id='3';
+> update books set publisher='Knopf' where id='4';
+
+---
+
+To display all records in a table use select command 
+
+> select * from books;
+
+---
+You can make edits based on queries for example
+
+> delete from books where author='Julia Phillips';
+
+or 
+
+> select author, publisher
+-> from books
+-> where copyright < '2011-01-01';
+> select author from books order by copyright;
+
+---
+
+Here's a sample command that enters records into a database
+
+
+> insert into books
+-> (author, title, publisher, copyright) values
+-> ('Emma Donoghue', 'Room', 'Little, Brown \& Company', '2010-08-06'),
+-> ('Zadie Smith', 'White Teeth', 'Hamish Hamilton', '2000-01-27');
+
+To display the results type 
+
+> select * from books;
+
+---
+
+To delete a record from a table you can use a command like 
+
+delete from "tablename" where id="ID#"
+
+---
+
+To replace a value is a table
+
+update yourTableName set yourColumnName=replace(yourColumnName,yourOldValue,yourNewValue);
+
+update books set format=replace(format,'hardback','hardcover');
+
+
+See README4 for information on installing WordPress and Omeka 
 
 
 ----
