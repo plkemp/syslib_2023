@@ -118,3 +118,166 @@ Choose a theme and configure it.
 
 If you're new to WordPress, start with a simple theme that will not require a great deal of customization.  
 
+------------
+
+## Installing Omeka on Linux/Unbuntu
+
+### Omeka uses the ImageMagick suite of utilities to work with photo files. 
+
+To install ImageMagick type the following command
+
+	sudo apt install imagemagick
+
+Enable Apache mod_rewrite. This is an Apache module used to rewrite URLs. 
+
+Omeka uses this to create appropriate URLs for items and collections in its digital libraries
+
+	sudo a2enmod rewrite
+
+Then restart Apache
+
+	sudo systemctl restart apache2
+
+-------------
+
+### Installing Omeka 
+
+Install the unzip package in order to extract the Omeka files 
+
+	sudo apt install unzip 
+
+	cd /var/www/html
+
+	sudo wget https://github.com/omeka/Omeka/releases/download/v3.1/omeka-3.1.zip
+
+	sudo unzip omeka-3.1.zip 
+
+Rename the Omeka directory
+
+	sudo mv omeka-3.1 omeka 
+
+
+-- Return to the root directory 
+
+	sudo su
+
+### Create a mySQL database for Omeka
+
+	mysql -u root 
+
+	create user 'omeka'@'localhost' identified by 'xxxxxxxxxx';     
+
+	create database omeka;
+
+	grant all privileges on omeka.* to 'omeka'@'localhost';
+
+	show databases;
+
+	\q
+
+----
+
+ In the extracted directory, find the db.ini file and add your database credentials, and
+ 
+ replace all values containing XXXXXX, with the appropriate information.
+
+	cd /var/www/html/omeka
+
+	sudo nano db.ini  
+
+----
+
+Create an authentication file in our /etc/apache2 directory, which is where the Apache2web server stores its configuration files. 
+
+The file will contain a hashed password and a username we give it.  Use the command 
+
+	sudo htpasswd -c /etc/apache2/.htpasswd
+
+Next you need to tell the Apache2 web server to use the htpasswd to control access to the cataloging module. 
+
+To do that use nano to open the apache2.conf file.  Type
+	
+	sudo nano /etc/apache2/apache2.conf
+
+-------
+
+Change file ownership so Omeka can write to the directory
+
+	sudo chown -R www-data:www-data *
+
+-------
+
+Check that the configuration file is okay, Type 
+
+	apachectl configtest
+
+
+If you get a Syntax OK message, then restart Apache2 and check its status --- 
+
+	sudo systemctl restart apache2
+
+	sudo systemctl restart mysql
+
+-------
+
+To access the Omeka Admin after the install go to
+
+	http:// your IP address /omeka
+
+
+### Troubleshooting Installation Errors 
+
+If Omeka does not display the installation page after you completed the server installation you may encounter an error like
+
+** "Omeka has encounter an error. ***
+ 
+ To display the exact error do the following:
+
+Go into the files for your Omeka installation on your server. 
+
+Open the .htaccess file in the root directory of your Omeka installation, where you'll also find the plugins and themes folders.
+
+You might need to turn on "see hidden files" in order to see the .htaccess file. If you're not sure how to do this, look in the directions for your file manager.
+
+Find the following line, and uncomment it (that is, remove the # sign): 
+
+#SetEnv APPLICATION_ENV development. 
+
+When you are done, it should read SetEnv APPLICATION_ENV development.
+
+You might need to download the file in order to edit it. 
+
+Be sure to upload the edited version and replace the older version
+
+----------------------------------
+You may want to install a variety of themes and plugins.  
+
+Remember to upload themes to the /Omeka/themes directory and plugins to the /Omeka/plugins directory.  
+
+You can find a list of registered Omeka Classic plugins here https://omeka.org/classic/plugins/
+
+You can find more at https://daniel-km.github.io/UpgradeToOmekaS/omeka_plugins.html
+
+
+Occassionally plugins can cause conflicts or Omeka server errors. If that occurs, you may just need to deactivate and uninstall 
+
+the plugin.  Unfortunately sometimes you need to reinstall Omeka.  Fortunately, you will have already installed imagemagick, 
+
+uploaded the Omeka zip file and created a MySQL database and user.  
+
+To reinstall Omeka, delete the Omeka directory using the commmand 
+
+	sudo rm -r omeka 
+	
+	sudo unzip omeka-3.1.zip 
+	
+This will reinstall Omeka.  
+
+If your problem persist you can delete and recreate the MySQL database by using the drop command 
+
+	drop user 'username'@'localhost'
+
+	drop database omeka
+	
+
+If you can't recall your passwords, you may need to repeat the entire Omeka installation process.  
