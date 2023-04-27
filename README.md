@@ -1,7 +1,7 @@
 # Notes on System Librarianship
 
 This is my journal from a course on Systems Librianship conducted by University of Kentucky Professor Sean Burns. 
-They notes were entered using the Nano text editor.
+The notes were entered using the Nano text editor.
 
 >This journal covers:
 
